@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Manicure types -->
+    <string name="service_manicure_classic">Classic Manicure</string>
+    <string name="service_removal">Gel Removal</string>
+    <string name="service_removal_and_manicure">Removal + Manicure</string>
+
+    <!-- Prices in EUR -->
+    <string name="price_manicure_classic">30</string>
+    <string name="price_removal">10</string>
+    <string name="price_removal_and_manicure">40</string>
+
+    <!-- Color coatings -->
+    <string name="service_shellac">Shellac (color coating)</string>
+    <string name="service_base_coat">Base Coat</string>
+    <string name="service_gel">Gel coating</string>
+    <string name="service_gel_with_color">Gel + Color</string>
+    <string name="service_gel_with_art">Gel + Art design</string>
+    <string name="service_extensions">Extensions</string>
+    <string name="service_extensions_long">Extensions (extra long)</string>
+    <string name="service_art_only">Art design only</string>
+
+    <!-- Prices for coatings -->
+    <string name="price_shellac">40</string>
+    <string name="price_shellac_without_removal">35</string>
+    <string name="price_base_coat">45</string>
+    <string name="price_gel">50</string>
+    <string name="price_gel_with_color">55</string>
+    <string name="price_gel_with_art">60</string>
+    <string name="price_extensions">70</string>
+    <string name="price_extensions_long">85</string>
+    <string name="price_art_only">10</string>
+</resources>

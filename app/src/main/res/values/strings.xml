@@ -7,4 +7,12 @@
     <string name="btn_design_gallery">Design Gallery</string>
     <string name="btn_my_account">My Account</string>
     <string name="btn_contact_location">Contact / Location</string>
+    <string name="service_manicure_title">Manicure</string>
+    <string name="service_pedicure_title">Pedicure</string>
+    <string name="service_coating_title">Coating</string>
+    <string name="service_design_title">Design</string>
+    <string name="service_extensions_title">Extensions</string>
+    <string name="euro_symbol">€</string>
+    <string name="back_button">← Back</string>
+    <string name="total_text">Total: </string>
 </resources>
