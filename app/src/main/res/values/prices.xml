@@ -8,7 +8,7 @@
     <!-- Prices in EUR -->
     <string name="price_manicure_classic">30</string>
     <string name="price_removal">10</string>
-    <string name="price_removal_and_manicure">40</string>
+    <string name="price_removal_including">5</string>
 
     <!-- Color coatings -->
     <string name="service_shellac">Shellac (color coating)</string>
@@ -21,7 +21,7 @@
     <string name="service_art_only">Art design only</string>
 
     <!-- Prices for coatings -->
-    <string name="price_shellac">40</string>
+    <string name="price_shellac">5</string>
     <string name="price_shellac_without_removal">35</string>
     <string name="price_base_coat">45</string>
     <string name="price_gel">50</string>

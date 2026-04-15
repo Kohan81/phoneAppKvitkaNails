@@ -8,6 +8,8 @@
     <string name="btn_my_account">My Account</string>
     <string name="btn_contact_location">Contact / Location</string>
     <string name="service_manicure_title">Manicure</string>
+    <string name="manicure_title_classic">"Manicure Classic"</string>
+    <string name="shellac_title">"Shellac (Color coating)"</string>
     <string name="service_pedicure_title">Pedicure</string>
     <string name="service_coating_title">Coating</string>
     <string name="service_design_title">Design</string>
