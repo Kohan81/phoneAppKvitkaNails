@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Kvitka Nails</string>
+    <string name="by_anna">by Anna</string>
+    <string name="ann_image_description">Anna Nails</string>
+    <string name="btn_book_appointment">Book appointment</string>
+    <string name="btn_services_prices">Services &amp; Prices</string>
+    <string name="btn_design_gallery">Design Gallery</string>
+    <string name="btn_my_account">My Account</string>
+    <string name="btn_contact_location">Contact / Location</string>
+</resources>
