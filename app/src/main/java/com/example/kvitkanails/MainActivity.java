@@ -20,5 +20,12 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, ServicesActivity.class);
             startActivity(intent);
         });
+
+        // Designs Gallery button
+        Button designsButton = findViewById(R.id.button4);
+        designsButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, DesignsGallery.class);
+            startActivity(intent);
+        });
     }
 }
