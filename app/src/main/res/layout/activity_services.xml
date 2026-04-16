@@ -87,6 +87,41 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!-- Separate removal section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@color/card_bg"
+                android:elevation="2dp"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <CheckBox
+                    android:id="@+id/cbRemovalOnly"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/service_removal_only"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textColor="@color/price_text"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/euro_symbol"
+                    android:textColor="@color/price_text"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
             <!-- Manicure section -->
             <LinearLayout
                 android:layout_width="match_parent"

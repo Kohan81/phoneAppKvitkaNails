@@ -10,12 +10,19 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ServicesActivity extends AppCompatActivity {
 
     private TextView totalPriceValue;
-    private CheckBox cbManicure;
+
+    // Manicure section
     private CheckBox cbManicureClassic;
-    private CheckBox cbManicureClassicShellac;
+    private CheckBox cbRemovalClassic;
+
+    // Shellac section
     private CheckBox cbShellac;
-    private CheckBox cbRemoval;
-    private CheckBox cbRemoval_Classic;
+    private CheckBox cbManicureShellac;
+    private CheckBox cbRemovalShellac;
+
+    // Standalone removal
+    private CheckBox cbRemovalOnly;
+
     private int total = 0;
 
     @Override
@@ -30,77 +37,109 @@ public class ServicesActivity extends AppCompatActivity {
             backButton.setOnClickListener(v -> finish());
         }
 
-        // Initialization of elements
+        // Initialize views
         totalPriceValue = findViewById(R.id.totalPriceValue);
-        //cbManicure = findViewById(R.id.cbManicureClassic);
-        cbRemoval = findViewById(R.id.cbRemoval);
 
+        // Manicure section
         cbManicureClassic = findViewById(R.id.cbManicureClassic);
-        cbRemoval_Classic = findViewById(R.id.cbRemoval_Classic);
+        cbRemovalClassic = findViewById(R.id.cbRemoval_Classic);
 
-        cbManicureClassicShellac = findViewById(R.id.cbManicureClassic_Shellac);
+        // Shellac section
         cbShellac = findViewById(R.id.cbShellac);
+        cbManicureShellac = findViewById(R.id.cbManicureClassic_Shellac);
+        cbRemovalShellac = findViewById(R.id.cbRemoval);
 
+        // Standalone removal
+        cbRemovalOnly = findViewById(R.id.cbRemovalOnly);
 
-        // Setting listeners for checkboxes
-        if (cbManicure != null) {
-            cbManicure.setOnCheckedChangeListener((buttonView, isChecked) -> calculateTotal());
-        }
-
-        if (cbRemoval != null) {
-            cbRemoval.setOnCheckedChangeListener((buttonView, isChecked) -> calculateTotal());
-        }
-
+        // === LOGIC FOR MANICURE SECTION ===
+        // When manicure is selected, removal is auto-checked
         if (cbManicureClassic != null) {
-            cbManicureClassic.setOnCheckedChangeListener((buttonView, isChecked) -> calculateTotal());
+            cbManicureClassic.setOnCheckedChangeListener((buttonView, isChecked) -> {
+                if (isChecked && cbRemovalClassic != null && !cbRemovalClassic.isChecked()) {
+                    cbRemovalClassic.setChecked(true);
+                }
+                calculateTotal();
+            });
         }
 
-        if (cbRemoval_Classic != null) {
-            cbRemoval_Classic.setOnCheckedChangeListener((buttonView, isChecked) -> calculateTotal());
+        // Removal can be unchecked independently
+        if (cbRemovalClassic != null) {
+            cbRemovalClassic.setOnCheckedChangeListener((buttonView, isChecked) -> calculateTotal());
         }
 
-        if (cbManicureClassicShellac != null) {
-            cbManicureClassicShellac.setOnCheckedChangeListener((buttonView, isChecked) -> calculateTotal());
-        }
-
+        // === LOGIC FOR SHELLAC SECTION ===
+        // When Shellac is selected, auto-check Manicure + Removal
         if (cbShellac != null) {
-            cbShellac.setOnCheckedChangeListener((buttonView, isChecked) -> calculateTotal());
+            cbShellac.setOnCheckedChangeListener((buttonView, isChecked) -> {
+                if (isChecked) {
+                    if (cbManicureShellac != null && !cbManicureShellac.isChecked()) {
+                        cbManicureShellac.setChecked(true);
+                    }
+                    if (cbRemovalShellac != null && !cbRemovalShellac.isChecked()) {
+                        cbRemovalShellac.setChecked(true);
+                    }
+                } else {
+                    // If Shellac is unchecked, uncheck Manicure and Removal too
+                    if (cbManicureShellac != null && cbManicureShellac.isChecked()) {
+                        cbManicureShellac.setChecked(false);
+                    }
+                    if (cbRemovalShellac != null && cbRemovalShellac.isChecked()) {
+                        cbRemovalShellac.setChecked(false);
+                    }
+                }
+                calculateTotal();
+            });
         }
 
-        // Calculate total
+        // If Manicure in Shellac section is unchecked, uncheck Shellac
+        if (cbManicureShellac != null) {
+            cbManicureShellac.setOnCheckedChangeListener((buttonView, isChecked) -> {
+                if (!isChecked && cbShellac != null && cbShellac.isChecked()) {
+                    cbShellac.setChecked(false);
+                }
+                calculateTotal();
+            });
+        }
 
-        //Initial calculation
+        // If Removal in Shellac section is unchecked, Shellac remains (no auto-uncheck)
+        if (cbRemovalShellac != null) {
+            cbRemovalShellac.setOnCheckedChangeListener((buttonView, isChecked) -> calculateTotal());
+        }
+
+        // Standalone removal listener
+        if (cbRemovalOnly != null) {
+            cbRemovalOnly.setOnCheckedChangeListener((buttonView, isChecked) -> calculateTotal());
+        }
+
         calculateTotal();
     }
 
     private void calculateTotal() {
         total = 0;
 
-        // Classic Manicure - 30 €
-        if (cbManicure != null && cbManicure.isChecked()) {
-            total += 30;
-        }
-
-        // Gel Removal - 5 €
-        if (cbRemoval != null && cbRemoval.isChecked()) {
-            total += 5;
-        }
-
-        // Classic Manicure + Gel Removal = 30 € + Shellac - 5 €
+        // Manicure section: Classic Manicure 30€ + Removal 5€
         if (cbManicureClassic != null && cbManicureClassic.isChecked()) {
             total += 30;
+            if (cbRemovalClassic != null && cbRemovalClassic.isChecked()) {
+                total += 5;
+            }
         }
 
-        if (cbManicureClassicShellac != null && cbManicureClassicShellac.isChecked()) {
-            total += 30;
-        }
-
-        if (cbRemoval_Classic != null && cbRemoval_Classic.isChecked()) {
-            total += 5;
-        }
-
+        // Shellac section: Shellac 40€ + Manicure 30€ + Removal 5€
         if (cbShellac != null && cbShellac.isChecked()) {
             total += 5;
+            if (cbManicureShellac != null && cbManicureShellac.isChecked()) {
+                total += 30;
+            }
+            if (cbRemovalShellac != null && cbRemovalShellac.isChecked()) {
+                total += 5;
+            }
+        }
+
+        // Standalone removal: 10€
+        if (cbRemovalOnly != null && cbRemovalOnly.isChecked()) {
+            total += 10;
         }
 
         // Update display
