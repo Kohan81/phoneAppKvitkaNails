@@ -33,4 +33,8 @@
     <string name="name_hint">Your name</string>
     <string name="phone_hint">+353 XX XXX XXXX</string>
     <string name="register_button">Register</string>
+    <string name="address_title">📍 Address:</string>
+    <string name="instagram_title">📷 Instagram:</string>
+    <string name="phone_title">📞 Phone:</string>
+    <string name="open_map_button">Open Map</string>
 </resources>

@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyAccount">
+    android:background="#D5C6E9"
+    tools:context=".Location">
 
     <!-- Heading -->
     <TextView
@@ -37,14 +38,14 @@
     <!-- Image -->
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="0dp"
-        android:layout_height="148dp"
+        android:layout_width="414dp"
+        android:layout_height="215dp"
         android:contentDescription="@string/ann_image_description"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/APPname"
-        app:srcCompat="@drawable/account4" />
+        app:srcCompat="@drawable/location" />
 
     <!-- Back button -->
 
@@ -63,71 +64,87 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Input fields -->
+    <!-- Contact Information -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.661">
+        app:layout_constraintVertical_bias="0.55">
 
+        <!-- Address -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="Please enter your name"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:text="📍 Address:"
+            android:textColor="#230454"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/etName"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:background="@android:drawable/editbox_background"
-            android:hint="@string/name_hint"
-            android:padding="16dp"
-            android:textColor="@color/black"
-            android:textColorHint="#888888"
+            android:layout_marginBottom="20dp"
+            android:text="Apartment 2, Novara Ave, Bré, Co. Contae Chill Mhantáin, A98 TX98"
+            android:textColor="#333333"
             android:textSize="16sp" />
 
+        <!-- Instagram -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="Please enter your phone number"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:text="📷 Instagram:"
+            android:textColor="#230454"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/etPhone"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:autoLink="web"
+            android:text="'@'kvitka_nails_studio"
+            android:textColor="#E1306C"
+            android:textSize="16sp" />
+
+        <!-- Phone -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="📞 Phone:"
+            android:textColor="#230454"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
-            android:background="@android:drawable/editbox_background"
-            android:hint="+353 XX XXX XXXX"
-            android:inputType="phone"
-            android:padding="16dp"
-            android:textColor="@color/black"
-            android:textColorHint="#888888"
+            android:autoLink="phone"
+            android:text="085 192 63 81"
+            android:textColor="#333333"
             android:textSize="16sp" />
 
+        <!-- Open Map Button -->
         <Button
-            android:id="@+id/btnRegister"
+            android:id="@+id/btnOpenMap"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="55dp"
             android:background="@drawable/button_custom_background"
-            android:fontFamily="@font/storyscript_regular"
-            android:text="Register"
-            android:textColor="@color/black"
-            android:textSize="24sp" />
+            android:fontFamily="@font/arizonia_regular"
+            android:text="Open Map"
+            android:textColor="#230454"
+            android:textSize="22sp" />
 
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

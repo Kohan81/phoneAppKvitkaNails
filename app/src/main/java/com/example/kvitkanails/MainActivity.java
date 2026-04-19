@@ -34,5 +34,12 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, MyAccount.class);
             startActivity(intent);
         });
+
+        // Location button
+        Button locationButton = findViewById(R.id.button2);
+        locationButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, Location.class);
+            startActivity(intent);
+        });
     }
 }
