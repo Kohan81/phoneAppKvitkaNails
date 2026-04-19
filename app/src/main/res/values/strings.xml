@@ -28,4 +28,9 @@
     <string name="photo_description">Design photo</string>
     <string name="prev_button">◀</string>
     <string name="next_button">▶</string>
+    <string name="enter_name">Please enter your name</string>
+    <string name="enter_phone">Please enter your phone number</string>
+    <string name="name_hint">Your name</string>
+    <string name="phone_hint">+353 XX XXX XXXX</string>
+    <string name="register_button">Register</string>
 </resources>

@@ -27,5 +27,12 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, DesignsGallery.class);
             startActivity(intent);
         });
+
+        // My Account button
+        Button accountButton = findViewById(R.id.button3);
+        accountButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, MyAccount.class);
+            startActivity(intent);
+        });
     }
 }

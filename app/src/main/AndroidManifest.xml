@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KvitkaNails">
         <activity
+            android:name=".MyAccount"
+            android:exported="false" />
+        <activity
             android:name=".DesignsGallery"
             android:exported="false" />
         <activity
