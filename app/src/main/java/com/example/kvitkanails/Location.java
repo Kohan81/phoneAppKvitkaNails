@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.TextView;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,6 +22,15 @@ public class Location extends AppCompatActivity {
         if (backButton != null) {
             backButton.setOnClickListener(v -> finish());
         }
+
+        // Instagram click listener
+        TextView tvInstagram = findViewById(R.id.tvInstagram);
+        tvInstagram.setOnClickListener(v -> {
+            String instagramUrl = "https://www.instagram.com/kvitka_nails_studio";
+            Uri uri = Uri.parse(instagramUrl);
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+        });
 
         // Open Map button
         Button openMapButton = findViewById(R.id.btnOpenMap);

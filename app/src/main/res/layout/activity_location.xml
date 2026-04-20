@@ -106,11 +106,11 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/tvInstagram"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:autoLink="web"
-            android:text="'@'kvitka_nails_studio"
+            android:text="\@kvitka_nails_studio"
             android:textColor="#E1306C"
             android:textSize="16sp" />
 
