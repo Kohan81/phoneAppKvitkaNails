@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KvitkaNails">
         <activity
+            android:name=".TimeAppointment"
+            android:exported="false" />
+        <activity
+            android:name=".Appointment"
+            android:exported="false" />
+        <activity
             android:name=".Location"
             android:exported="false" />
         <activity

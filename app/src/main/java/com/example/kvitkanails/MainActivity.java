@@ -14,6 +14,13 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+        // Appointment button
+        Button appointmentButton = findViewById(R.id.button5);
+        appointmentButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, Appointment.class);
+            startActivity(intent);
+        });
+
         // Services & Prices button
         Button servicesButton = findViewById(R.id.button);
         servicesButton.setOnClickListener(v -> {
